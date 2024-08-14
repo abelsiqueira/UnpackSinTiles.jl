@@ -46,3 +46,34 @@ function loadTileVariable(tile, in_date, root_path, variable; close_file = true)
     end
     return hdf_data
 end
+
+function loadTileBurntYear(months_r, tile, root_path; variable = "Burn Date")
+    burnYear = [spzeros(Int16, 2400,2400) for _ in 1:12]
+    for i in 1:12
+        bb_dates = loadTileVariable(tile, months_r[i], root_path, variable)
+        if !isnothing(bb_dates)
+            burnYear[i][:,:] = bb_dates
+        end
+    end
+    return burnYear
+end
+
+function dailySparse(year, tile, root_path; variable="Burn Date")
+    doy_month = monthIntervals(year)
+    months_r = initMonthsArray(year)
+    loadedYear = loadTileBurntYear(months_r, tile, root_path; variable)
+    doy_bool= map(doy_month) do (doy, indx_month)
+        ba = loadedYear[indx_month]
+        getPixelDayRaw(ba, doy)
+    end
+    return doy_bool
+end
+
+function burnTimeSpan(s_year, e_year, tile, root_path; variable = "Burn Date")
+    all_years = dailySparse(s_year, tile, root_path; variable)
+    @showprogress for year in s_year+1:e_year
+        n_year = dailySparse(year, tile, root_path; variable)
+        push!(all_years, n_year...)
+    end
+    return all_years
+end

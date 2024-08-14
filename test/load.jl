@@ -8,4 +8,8 @@ tile_path = getTilePath(tile, in_date, root_path)
 
 o = openTile(tile, in_date, root_path)
 k_vars = getTileKeys(o)
+
+meta = parse_metadata(o)
+meta["GridStructure"]["GRID_1"]
+
 o.end()

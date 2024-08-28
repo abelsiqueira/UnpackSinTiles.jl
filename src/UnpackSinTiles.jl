@@ -4,6 +4,7 @@ module UnpackSinTiles
     using Zarr
     using Statistics
     using DataStructures
+    using ProgressMeter
     using PythonCall
 
     hdf(f) = @pyconst(pyimport("pyhdf.SD").SD)(f)

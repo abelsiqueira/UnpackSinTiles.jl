@@ -5,6 +5,8 @@ module UnpackSinTiles
     using Statistics
     using DataStructures
     using ProgressMeter
+    using Dates
+    using SparseArrays
     using PythonCall
 
     hdf(f) = @pyconst(pyimport("pyhdf.SD").SD)(f)
@@ -12,8 +14,10 @@ module UnpackSinTiles
 
     include("loadTile.jl")
     include("metadata.jl")
+    include("pixelOperations.jl")
 
     export openTile, loadTileVariable
     export getTileKeys, getTilePath
+    export burnTimeSpan
 end
 

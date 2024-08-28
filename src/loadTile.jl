@@ -52,7 +52,7 @@ function loadTileBurntYear(months_r, tile, root_path; variable = "Burn Date")
     for i in 1:12
         bb_dates = loadTileVariable(tile, months_r[i], root_path, variable)
         if !isnothing(bb_dates)
-            burnYear[i][:,:] = bb_dates
+            burnYear[i][:,:] .= bb_dates
         end
     end
     return burnYear

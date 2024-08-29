@@ -44,7 +44,8 @@ function loadTileVariable(tile, in_date, root_path, variable; close_file = true)
     if close_file
         hdf_tile.end() # close hdf tile
     end
-    return hdf_data
+    hdf_data_jl = pyconvert(Array, hdf_data)
+    return hdf_data_jl
 end
 
 function loadTileBurntYear(months_r, tile, root_path; variable = "Burn Date")

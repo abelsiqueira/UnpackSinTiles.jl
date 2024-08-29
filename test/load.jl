@@ -15,4 +15,6 @@ meta["GridStructure"]["GRID_1"]
 o.end()
 
 # load more
+d = loadTileVariable(tile, in_date, root_path, "Burn Date")
+
 test_y = burnTimeSpan("2001", "2001", tile, root_path; variable = "Burn Date")

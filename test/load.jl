@@ -10,19 +10,18 @@ o = openTile(tile, in_date, root_path)
 k_vars = getTileKeys(o)
 
 meta = parse_metadata(o)
-meta["GridStructure"]["GRID_1"]
+m = meta["GridStructure"]["GRID_1"]
+m_keys = ["XDim", "YDim", "UpperLeftPointMtrs", "LowerRightMtrs",
+    "Projection", "ProjParams", "SphereCode", "GridOrigin"]
 
 o.end()
 
 # load more
 d = loadTileVariable(tile, in_date, root_path, "Burn Date")
 
-test_y = burnTimeSpan(2001, 2023, tile, root_path; variable = "Burn Date") # ? ~ 204MB
 
-using About
-about(test_y)
 # test Zarr skeleton
-using YAXArrays, Zarr, FillArrays
+# using YAXArrays, Zarr, FillArrays
 
 # a = YAXArray(Falses(2400, 2400, 365*15))
 # b = YAXArray(Zeros(Union{Missing, Int16}, 2400, 2400, 365))

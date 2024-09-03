@@ -17,4 +17,14 @@ o.end()
 # load more
 d = loadTileVariable(tile, in_date, root_path, "Burn Date")
 
-test_y = burnTimeSpan("2001", "2001", tile, root_path; variable = "Burn Date")
+test_y = burnTimeSpan(2001, 2023, tile, root_path; variable = "Burn Date") # ? ~ 204MB
+
+using About
+about(test_y)
+# test Zarr skeleton
+using YAXArrays, Zarr, FillArrays
+
+# a = YAXArray(Falses(2400, 2400, 365*15))
+# b = YAXArray(Zeros(Union{Missing, Int16}, 2400, 2400, 365))
+# c = YAXArray(Zeros(Union{Missing, Float32}, 2400, 2400, 365))
+

@@ -1,6 +1,7 @@
 using UnpackSinTiles
 # testing funcitons!
 tile = "h13v10"
+# tile = "h01v08" # this one has zero fire events!
 in_date = "2001.01.01"
 root_path = "/Net/Groups/BGI/data/DataStructureMDI/DATA/Incoming/MODIS/MCD64A1.061/MCD64A1.061/"
 # tile path

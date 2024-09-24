@@ -46,7 +46,7 @@
 > See also https://www.ceom.ou.edu/static/docs/IGBP.pdf
 
 | Value | Land Cover Classification            | Dominant Plant Form |
-|-------|--------------------------------------| 
+|-------|--------------------------------------| -------------------- |
 | 1     | Evergreen Needleleaf Forests         | Tree |
 | 2     | Evergreen Broadleaf Forests          | Tree |
 | 3     | Deciduous Needleleaf Forests         | Tree |

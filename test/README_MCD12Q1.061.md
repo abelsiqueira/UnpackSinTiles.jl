@@ -45,26 +45,26 @@
 > The user guide uses an scale for 0-16, zero being water. But the actual data goes from 1 to 17, where now 17 is water.
 > See also https://www.ceom.ou.edu/static/docs/IGBP.pdf
 
-| Value | Land Cover Classification            |
-|-------|--------------------------------------|
-| 1     | Evergreen Needleleaf Forests         |
-| 2     | Evergreen Broadleaf Forests          |
-| 3     | Deciduous Needleleaf Forests         |
-| 4     | Deciduous Broadleaf Forests          |
-| 5     | Mixed Forests                        |
-| 6     | Closed Shrublands                    |
-| 7     | Open Shrublands                      |
-| 8     | Woody Savannas                       |
-| 9     | Savannas                             |
-| 10    | Grasslands                           |
-| 11    | Permanent Wetlands                   |
-| 12    | Croplands                            |
-| 13    | Urban and Built-up Lands             |
-| 14    | Cropland/Natural Vegetation Mosaics  |
-| 15    | Permanent Snow and Ice               |
-| 16    | Barren or Sparsely Vegetated         |
-| 17    | Water                                |
-| 255   | Unclassified (No Data)               |
+| Value | Land Cover Classification            | Dominant Plant Form |
+|-------|--------------------------------------| 
+| 1     | Evergreen Needleleaf Forests         | Tree |
+| 2     | Evergreen Broadleaf Forests          | Tree |
+| 3     | Deciduous Needleleaf Forests         | Tree |
+| 4     | Deciduous Broadleaf Forests          | Tree |
+| 5     | Mixed Forests                        | Tree |
+| 6     | Closed Shrublands                    | Shrub |
+| 7     | Open Shrublands                      | Shrub |
+| 8     | Woody Savannas                       | Savanna |
+| 9     | Savannas                             | Savanna |
+| 10    | Grasslands                           | Herb |
+| 11    | Permanent Wetlands                   | Herb |
+| 12    | Croplands                            | Herb |
+| 13    | Urban and Built-up Lands             | Non-Veg |
+| 14    | Cropland/Natural Vegetation Mosaics  | Herb |
+| 15    | Permanent Snow and Ice               | Non-Veg |
+| 16    | Barren or Sparsely Vegetated         | Non-Veg |
+| 17    | Water                                | Non-Veg |
+| 255   | Unclassified (No Data)               | Non-Veg |
 
 
 > [!TIP]

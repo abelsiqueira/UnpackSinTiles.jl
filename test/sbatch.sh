@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name MODIS_FIRES
 #SBATCH --cpus-per-task=2
-#SBATCH --mem-per-cpu=25G
-#SBATCH --time=00:25:00
+#SBATCH --mem-per-cpu=27G
+#SBATCH --time=00:55:00
 #SBATCH --array=1-268
 
 # telling slurm where to write output and error
@@ -21,4 +21,4 @@ export JULIA_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 #
 ################
 sleep $SLURM_ARRAY_TASK_ID
-julia --project --heap-size-hint=50G load_save_all.jl $SLURM_ARRAY_TASK_ID
+julia --project --heap-size-hint=50G to_zarr.jl $SLURM_ARRAY_TASK_ID

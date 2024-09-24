@@ -86,19 +86,20 @@ function averageWindows(sMatrix, n::Int)
     # Calculate the size of the output matrix
     new_rows, new_cols = rows ÷ n, cols ÷ n
     # Initialize the output matrix
-    result = fill(NaN32, new_rows, new_cols)
+    result = fill(NaN32, new_rows, new_cols) # ? NaN32 here and then missing ?
     # Iterate over the windows and calculate averages
     for i in 1:new_rows
         for j in 1:new_cols
             window = @view sMatrix[(i-1)*n+1:i*n, (j-1)*n+1:j*n]
-            μ = mean(window)
+            μ = mean(window) # this is the mean on a SparseArray, how full is the tile?
             result[i, j] = iszero(μ) ? NaN32 : μ 
         end
     end
     return result
 end
-
-function agg(μBurn, afterBurn, tsteps; res = 60)
+# TODO: include masks here! land, pfts.
+# MODIS: LAND_COVER TYPE GLOBAL 500m
+function aggTile(μBurn, afterBurn, tsteps; res = 60)
     @showprogress for t_step in 1:tsteps
         μBurn[:,:,t_step] = averageWindows(afterBurn[t_step], res)
     end

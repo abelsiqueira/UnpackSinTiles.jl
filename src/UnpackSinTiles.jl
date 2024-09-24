@@ -15,9 +15,10 @@ module UnpackSinTiles
     include("loadTile.jl")
     include("metadata.jl")
     include("pixelOperations.jl")
+    include("modisTiles.jl")
 
     export openTile, loadTileVariable
     export getTileKeys, getTilePath
-    export burnTimeSpan
+    export burnTimeSpan, updateAfterBurn!, aggTile
 end
 

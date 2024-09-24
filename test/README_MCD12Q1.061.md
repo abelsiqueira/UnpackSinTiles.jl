@@ -21,29 +21,16 @@
 | QC                    | Product quality flags                                                              | Quality Flag  | 8-bit unsigned integer | 255        | N/A           | 0 to 10     | N/A          |
 | LW                    | Binary land (class 2) / water (class 1) mask derived from MOD44W                    | Class         | 8-bit unsigned integer | 255        | N/A           | 1 to 2      | N/A          |
 
-### PFTs: `LC_Type5`
-
-| Value | Plant Functional Type (PFT) Classification    |
-|-------|-----------------------------------------------|
-| 0     | Water                                         |
-| 1     | Evergreen Needleleaf Trees                    |
-| 2     | Evergreen Broadleaf Trees                     |
-| 3     | Deciduous Needleleaf Trees                    |
-| 4     | Deciduous Broadleaf Trees                     |
-| 5     | Shrubs                                        |
-| 6     | Grasslands                                    |
-| 7     | Cereal Croplands                              |
-| 8     | Broadleaf Croplands                           |
-| 9     | Urban and Built-up Lands                      |
-| 10    | Permanent Snow and Ice                        |
-| 11    | Barren                                        |
-| 255    | Unclassified                                 |
 
 ### IGBP Vegetation Types Classification: `LC_Type1`
 
 > [!IMPORTANT]
 > The user guide uses an scale for 0-16, zero being water. But the actual data goes from 1 to 17, where now 17 is water.
 > See also https://www.ceom.ou.edu/static/docs/IGBP.pdf
+
+> [!TIP]
+> Non-vegetated areas: `Dominant Plant Form`
+> 17, 13, 15, 16, 255
 
 | Value | Land Cover Classification            | Dominant Plant Form |
 |-------|--------------------------------------| -------------------- |
@@ -67,6 +54,20 @@
 | 255   | Unclassified (No Data)               | Non-Veg |
 
 
-> [!TIP]
-> Non-vegetated areas: `LC_Type1`
-> 17, 11, 13, 15, 16, 255
+### PFTs: `LC_Type5`
+
+| Value | Plant Functional Type (PFT) Classification    |
+|-------|-----------------------------------------------|
+| 0     | Water                                         |
+| 1     | Evergreen Needleleaf Trees                    |
+| 2     | Evergreen Broadleaf Trees                     |
+| 3     | Deciduous Needleleaf Trees                    |
+| 4     | Deciduous Broadleaf Trees                     |
+| 5     | Shrubs                                        |
+| 6     | Grasslands                                    |
+| 7     | Cereal Croplands                              |
+| 8     | Broadleaf Croplands                           |
+| 9     | Urban and Built-up Lands                      |
+| 10    | Permanent Snow and Ice                        |
+| 11    | Barren                                        |
+| 255    | Unclassified                                 |

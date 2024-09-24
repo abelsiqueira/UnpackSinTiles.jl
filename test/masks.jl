@@ -15,9 +15,9 @@ o_tile = openTile(hv_tile, in_date, root_path)
 
 o_t_keys = getTileKeys(o_tile)
 
-lc_type1 = loadTileVariable(hv_tile, in_date, root_path, "LC_Type5")
+lc_type1 = loadTileVariable(hv_tile, in_date, root_path, "LC_Type1")
 
-Int.(lc_type1)
+LC_TypeX_vals = Int.(lc_type1)
 
 let 
     using CairoMakie
@@ -28,9 +28,9 @@ let
     hidespines!(ax)
     heatmap!(ax, Int.(lc_type1)'[:, end:-1:1];
         colormap=Categorical(cgrad(:ground_cover, 12, categorical=true)[2:end]), # tol_land_cover
-        colorrange = (1,11), highclip=:black,
+        colorrange = (1,16), highclip=:black,
         lowclip= :grey13
         # lowclip= (:steelblue, 1)
         )
-    save("lc.png", fig)
+    save("lc_new_path_lc1.png", fig)
 end
